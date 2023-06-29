@@ -102,29 +102,27 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="48dp"
+        android:checkedButton="@id/maleRadioButton"
         android:orientation="horizontal"
-        android:checkedButton="@id/radioButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editWeight">
 
         <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="80dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="88dp"
+            android:id="@+id/maleRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:text="@string/male" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="80dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="68dp"
+            android:id="@+id/femaleRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:text="@string/female" />
     </RadioGroup>
 

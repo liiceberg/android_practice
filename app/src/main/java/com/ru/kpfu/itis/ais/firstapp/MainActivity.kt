@@ -2,6 +2,11 @@ package com.ru.kpfu.itis.ais.firstapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioGroup
+import android.widget.TextView
+
 /*
 Вам нужно будет сделать верстку с помощью ConstraintLayout.  На экране есть кнопка(button) и поля ввода(EditText) для
 имени(text), поле не может быть пустым. Максимальное кол-во символов - 50
@@ -21,10 +26,59 @@ import android.os.Bundle
 для женщин: 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) – 161.
  */
 class MainActivity : AppCompatActivity() {
-    private var calories = 0
+    private lateinit var name: EditText
+    private lateinit var age: EditText
+    private lateinit var weight: EditText
+    private lateinit var height: EditText
+    private lateinit var gender: RadioGroup
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        name = findViewById(R.id.editName)
+        age = findViewById(R.id.editAge)
+        weight = findViewById(R.id.editWeight)
+        height = findViewById(R.id.editHeight)
+        gender = findViewById(R.id.radioGroup)
+
+        val btn : Button = findViewById(R.id.button)
+        val result : TextView = findViewById(R.id.result_text)
+
+        btn.setOnClickListener {
+            val value = calculate()
+            if (value == null) {
+//                result.text = "Incorrect data, please try again"
+                    result.text = value
+
+            }
+            else {
+                result.text = value
+            }
+        }
+
     }
+
+    private fun calculate() : String? {
+        val nameValue = name.text.toString()
+        val heightValue = name.text.toString().toIntOrNull()
+        val ageValue = name.text.toString().toIntOrNull()
+        val weightValue = name.text.toString().toDoubleOrNull()
+
+        if (nameValue.length in 1..50 &&
+            heightValue != null && heightValue in 1 .. 249 &&
+            ageValue != null && ageValue in 1 .. 149 &&
+            weightValue != null && weightValue in 1.0 .. 249.0) {
+            var value : Double = 10 * weightValue + 6.25 * heightValue - 5 * ageValue + 5
+            if (gender.checkedRadioButtonId == R.id.maleRadioButton) {
+                value += 5
+            }
+            else {
+                value -= 161
+            }
+            return "$nameValue, your perfect calorie content is $value"
+        }
+        return "" + nameValue + heightValue + weightValue + ageValue
+    }
+
 }
