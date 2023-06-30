@@ -29,7 +29,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number|numberDecimal"
-        android:text="@string/weight"
+        android:hint="@string/weight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editHeight" />
@@ -54,7 +54,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/name"
+        android:hint="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerText" />
@@ -66,7 +66,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number"
-        android:text="@string/height"
+        android:hint="@string/height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editAge" />
@@ -78,7 +78,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number"
-        android:text="@string/age"
+        android:hint="@string/age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editName" />
@@ -93,7 +93,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

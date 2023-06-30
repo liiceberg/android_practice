@@ -48,9 +48,7 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener {
             val value = calculate()
             if (value == null) {
-//                result.text = "Incorrect data, please try again"
-                    result.text = value
-
+                result.text = "Incorrect data, please try again"
             }
             else {
                 result.text = value
@@ -61,15 +59,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculate() : String? {
         val nameValue = name.text.toString()
-        val heightValue = name.text.toString().toIntOrNull()
-        val ageValue = name.text.toString().toIntOrNull()
-        val weightValue = name.text.toString().toDoubleOrNull()
+        val heightValue = height.text.toString().toIntOrNull()
+        val ageValue = age.text.toString().toIntOrNull()
+        val weightValue = weight.text.toString().toDoubleOrNull()
 
         if (nameValue.length in 1..50 &&
             heightValue != null && heightValue in 1 .. 249 &&
             ageValue != null && ageValue in 1 .. 149 &&
             weightValue != null && weightValue in 1.0 .. 249.0) {
-            var value : Double = 10 * weightValue + 6.25 * heightValue - 5 * ageValue + 5
+            var value : Double = 10 * weightValue + 6.25 * heightValue - 5 * ageValue
             if (gender.checkedRadioButtonId == R.id.maleRadioButton) {
                 value += 5
             }
@@ -78,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             }
             return "$nameValue, your perfect calorie content is $value"
         }
-        return "" + nameValue + heightValue + weightValue + ageValue
+        return null
     }
 
 }
