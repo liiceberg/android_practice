@@ -51,19 +51,19 @@ class MainActivity : AppCompatActivity() {
                 result.text = "Incorrect data, please try again"
             }
             else {
-                result.text = value
+                val nameValue = name.text.toString()
+                result.text = "$nameValue, your perfect calorie content is $value"
             }
         }
 
     }
 
-    private fun calculate() : String? {
-        val nameValue = name.text.toString()
+    private fun calculate() : Double? {
         val heightValue = height.text.toString().toIntOrNull()
         val ageValue = age.text.toString().toIntOrNull()
         val weightValue = weight.text.toString().toDoubleOrNull()
 
-        if (nameValue.length in 1..50 &&
+        if (name.text.toString().length in 1..50 &&
             heightValue != null && heightValue in 1 .. 249 &&
             ageValue != null && ageValue in 1 .. 149 &&
             weightValue != null && weightValue in 1.0 .. 249.0) {
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             else {
                 value -= 161
             }
-            return "$nameValue, your perfect calorie content is $value"
+            return value
         }
         return null
     }
