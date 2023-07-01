@@ -7,26 +7,24 @@
     android:background="@color/pink"
     tools:context=".FirstFragment">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clickButton"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="@string/click_button"
+        app:layout_constraintBottom_toTopOf="@+id/text_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/first"
         android:textColor="@color/white"
         android:textSize="160sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/clickButton"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:text="@string/click_button"
-
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
