@@ -2,12 +2,27 @@ package com.ru.kpfu.itis.ais.firstapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.ru.kpfu.itis.ais.firstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private var calories = 0
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val newBinding = ActivityMainBinding.inflate(layoutInflater)
+        binding = newBinding
+        setContentView(newBinding.root)
 
+        var controller =
+            (supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment)
+                .navController
+
+        findViewById<BottomNavigationView>(R.id.menu_btm).apply {
+            setupWithNavController(controller)
+        }
     }
 }
