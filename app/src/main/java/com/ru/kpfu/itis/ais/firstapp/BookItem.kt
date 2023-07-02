@@ -1,6 +1,5 @@
 package com.ru.kpfu.itis.ais.firstapp
 
-import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy

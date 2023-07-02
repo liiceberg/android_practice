@@ -18,8 +18,9 @@ class SingleFragment : Fragment(R.layout.fragment_single) {
             bindInstance(book, view)
         }
     }
+
     private fun findItem(id: Int?): Book? {
-        BookRepository.list.forEach{
+        BookRepository.list.forEach {
             if (it.id == id) {
                 return it
             }
