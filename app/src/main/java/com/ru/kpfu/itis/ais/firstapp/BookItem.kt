@@ -10,19 +10,15 @@ import com.ru.kpfu.itis.ais.firstapp.databinding.ItemBookBinding
 class BookItem(
     private val binding: ItemBookBinding,
     private val glide: RequestManager,
-//    private val onItemClick: (Book) -> Unit,
+    private val onItemClick: (Book) -> Unit,
 ) : RecyclerView.ViewHolder(binding.root) {
-    private val options: RequestOptions = RequestOptions
-        .diskCacheStrategyOf(DiskCacheStrategy.AUTOMATIC)
 
-    private val context: Context
-        get() = itemView.context
+    private val options: RequestOptions = RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
 
     fun onBind(book: Book) {
         binding.run {
             tvTitle.text = book.name
             tvAuthor.text = book.author
-
 
             glide
                 .load(book.url)
@@ -31,10 +27,11 @@ class BookItem(
                 .apply(options)
                 .into(ivImg)
 
-//            root.setOnClickListener {
-//                onItemClick(book)
-//            }
-//            tvTitle.setTextColor(context.getColor(city.color))
+            root.setOnClickListener {
+                onItemClick(book)
+            }
+
         }
     }
+
 }

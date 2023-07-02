@@ -9,10 +9,8 @@ import com.ru.kpfu.itis.ais.firstapp.databinding.ItemBookBinding
 class BookAdapter(
     private var list: List<Book>,
     private val glide: RequestManager,
-//    private val onItemClick: (Book) -> Unit,
+    private val onItemClick: (Book) -> Unit,
 ) : RecyclerView.Adapter<BookItem>() {
-
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,8 +20,8 @@ class BookAdapter(
             parent,
             false,
         ),
-        glide = glide
-//        onItemClick = onItemClick,
+        glide = glide,
+        onItemClick = onItemClick
     )
 
     override fun onBindViewHolder(holder: BookItem, position: Int) {
@@ -34,8 +32,4 @@ class BookAdapter(
         return list.size
     }
 
-    fun updateDataset(newList: List<Book>) {
-        list = newList
-        notifyDataSetChanged()
-    }
 }
